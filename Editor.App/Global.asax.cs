@@ -1,6 +1,8 @@
 ﻿using Editor.App.App_Start;
+using Editor.Entity.Static_Class;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Routing;
@@ -15,7 +17,7 @@ namespace Editor.App
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
+            GlobalConnection.Editor = ConfigurationManager.ConnectionStrings["Editor"].ToString();
         }
 
         protected void Session_Start(object sender, EventArgs e)

@@ -1,26 +1,39 @@
-﻿(Modal.Registration = (function ($) {
+﻿
+Registration = new function () {
 
-    var _modal,
-        $modal;
+    var modal,
+        btnRegister;
 
+    var init = function () {
+            modal = "#registrationModal",
+            btnRegister = "#btnSignUp";
 
+        $(btnRegister).on('click', _show);
 
-    var _init = function () {
-
-        _modal = UIkit.modal($modal);
 
     };
-        
+
     var _show = function () {
+        UIkit.modal($(modal)).show();
+    };
 
-        _init();
 
+    var _initControls = function () {
 
     };
 
+
+    //Making Function Public
     return {
-        "show": _show
+        Start: init
     };
+};
+
+window.onload = function () {
+
+    var url = window.location.toString();
+    Registration.Start();
+};
 
 
-})(jQuery));
+

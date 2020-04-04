@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Editor.App.Entity
+namespace Editor.Entity.User
 {
     public class UserSession
     {
