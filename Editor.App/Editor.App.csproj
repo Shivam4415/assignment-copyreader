@@ -83,10 +83,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controls\EditorNavMenu.ascx" />
+    <Content Include="Home.aspx" />
     <Content Include="EditorPage.aspx" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Js\jquery\jquery-3.4.1.js" />
     <Content Include="Js\jquery\jquery-3.4.1.min.js" />
+    <Content Include="Js\modal\Modal.Registration.js" />
+    <Content Include="Js\page\Page.Editor.js" />
+    <Content Include="Js\page\Page.Home.js" />
     <Content Include="Js\uikit\uikit-icons.js" />
     <Content Include="Js\uikit\uikit-icons.min.js" />
     <Content Include="Js\uikit\uikit-rtl.css" />
@@ -97,12 +103,27 @@
     <Content Include="Js\uikit\uikit.min.js" />
     <Content Include="Js\uikit\uikit.theme.css" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="Register.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Authentication\AuthServices.cs" />
     <Compile Include="Controller\EditorController.cs" />
+    <Compile Include="Controls\EditorNavMenu.ascx.cs">
+      <DependentUpon>EditorNavMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\EditorNavMenu.ascx.designer.cs">
+      <DependentUpon>EditorNavMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditorPage.aspx.cs">
       <DependentUpon>EditorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -111,7 +132,15 @@
       <DependentUpon>EditorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Entity\UserProfile.cs" />
+    <Compile Include="Entity\Users.cs" />
     <Compile Include="Entity\UserSession.cs" />
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -135,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="FutureUse\" />
-    <Folder Include="Js\page\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <PropertyGroup>

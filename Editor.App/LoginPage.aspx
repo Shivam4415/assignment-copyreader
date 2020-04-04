@@ -9,6 +9,7 @@
     <script src="./Js/uikit/uikit.js"></script>
     <script src="./Js/jquery/jquey-3.4.1.min.js"></script>
     <script src="./Js/uikit/uikit-icons.js"></script>
+    <script src="./Js/model/Modal.Registration.js"></script>
 </head>
 <body class="uk-height-1-1">
     <div class="uk-flex uk-height-1-1 uk-flex-middle uk-text-center uk-overflow-auto">
@@ -37,6 +38,7 @@
 
                     <div class="uk-flex uk-flex-between">
                         <asp:Button ID="btnSignIn" class="uk-button uk-width-small uk-button-primary" name="SignIn" runat="server" Text="LogIn" OnClick="btnLogin" />
+                        <button id="btnSignUp" class="uk-button uk-width-small uk-button-secondary" name="SignUp">SignUp</button>
                     </div>
 
                 </fieldset>

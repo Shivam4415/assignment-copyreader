@@ -10623,4 +10623,17 @@ ul > li > .uk-card:hover {
 .uk-height-3-5{
     height: 60%!important;
 }
+.uk-height-1-3 {
+    height: 33.33% !important;
+}
+.uk-height-2-3 {
+    height: 66.66% !important;
+}
 
+
+.uk-editor-height {
+    height: 350px!important;
+}
+#createNew:hover{
+    cursor:pointer;
+}

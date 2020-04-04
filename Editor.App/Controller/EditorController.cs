@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace Editor.App.Controller
 {
+
     public class EditorController : ApiController
     {
         // GET api/<controller>
