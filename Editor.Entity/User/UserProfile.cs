@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Editor.Entity.User
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public class UserProfile
     {
-        public Guid Id { get; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
 
         public string Email { get; set; }
@@ -21,6 +20,9 @@ namespace Editor.Entity.User
         public bool IsOnline { get; set; }
 
         public DateTime? LastActive { get; set; }
+
+        [JsonProperty]
+        public FileEditor editor { get; set; }
 
     }
 }

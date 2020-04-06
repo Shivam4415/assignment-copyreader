@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Editor.Entity</RootNamespace>
     <AssemblyName>Editor.Entity</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44345</IISExpressSSLPort>
@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -72,6 +75,18 @@
   <ItemGroup>
     <Compile Include="Data\Attributor.cs" />
     <Compile Include="Data\Operation.cs" />
+    <Compile Include="Data\ReaderData.cs" />
+    <Compile Include="Enum\ErrorCode.cs" />
+    <Compile Include="Enum\ErrorResponseCode.cs" />
+    <Compile Include="Enum\Header.cs" />
+    <Compile Include="Enum\Permission.cs" />
+    <Compile Include="Enum\ValidationStatusCode.cs" />
+    <Compile Include="Exceptions\ErrorObject.cs" />
+    <Compile Include="Exceptions\ErrorResponse.cs" />
+    <Compile Include="Exceptions\NotFound.cs" />
+    <Compile Include="Exceptions\RequestForbidden.cs" />
+    <Compile Include="Exceptions\ValidationFailed.cs" />
+    <Compile Include="Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Static Class\GlobalConnection.cs" />
     <Compile Include="User\FileEditor.cs" />

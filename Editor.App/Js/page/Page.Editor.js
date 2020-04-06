@@ -6,6 +6,10 @@ Editor = new function () {
         toolbar = "#toolbar",
         editorContainer = "#editorContainer";
 
+    var _change,
+        _quill,
+        editorId = 0;
+
     var toolbarOptions = [
         ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
         ['blockquote', 'code-block'],
@@ -33,18 +37,78 @@ Editor = new function () {
     };
 
     var _initEditor = function () {
+        Delta = Quill.import('delta');
 
-        var quill = new Quill(editorContainer, {
+
+        _quill = new Quill(editorContainer, {
             modules: {
                 toolbar: toolbarOptions
             },
             theme: 'snow'
         });
 
+        _change = new Delta();
+
+        _quill.on('text-change', function (Delta) {
+            _change = _change.compose(Delta);
+        });
+
+        _saveEditorData();
+
 
     };
 
+    var _setAutoSaveTimer = function () {
+
+
+    };
+
+    var _saveEditorData = function () {
+        var contents = _quill.getContents();
+        setInterval(function () {
+            if (_change.length() > 0) {
+                console.log('Contents = ', contents);
+                console.log('changes', _change);
+
+                _update(_change.ops);
+                _change = new Delta();
+            }
+        }, 7 * 1000);
+
+    };
+
+
+    var _onAddHandler = function () {
+
+        console.log("updated");
+    };
+
+
+
     var _initControls = function () {
+
+    };
+
+    var _showNotification = function (response) {
+        UIkit.notification({
+            message: response.responseJSON.Message || 'Try again later.',
+            status: 'danger',
+            timeout: '3000',
+            pos: 'top-center'
+        });
+    };
+
+
+    var _update = function (data) {
+        return $.ajax({
+            url: '/api/v1/editor/' + editorId,
+            type: 'POST',
+            data: JSON.stringify(data),
+            success: _onAddHandler,
+            error: _showNotification,
+            contentType: 'application/json',
+            dataType: 'json'
+        });
 
     };
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Editor.Entity.Static_Class
+﻿namespace Editor.Entity.Static_Class
 {
     public static class GlobalConnection
     {

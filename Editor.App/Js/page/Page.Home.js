@@ -77,8 +77,8 @@ Home = new function () {
             error: _showNotification,
             contentType: 'application/json',
             dataType: 'json'
-        }).done(function () { M.RealtimeNotificationConsumer.destroy() });
-    }
+        }).done(function () { M.RealtimeNotificationConsumer.destroy(); });
+    };
 
 
     return {
