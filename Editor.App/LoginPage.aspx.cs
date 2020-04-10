@@ -1,5 +1,6 @@
-﻿using Editor.App.Authentication;
+﻿using Editor.App.App_Start;
 using Editor.Entity.User;
+using Editor.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace Editor.App
                 string email = txtEmail.Value;
                 string password = txtPassword.Value;
 
-                UserProfile user = AuthServices.GetUser(email);
+                UserProfile user = AuthServices.GetUserProfile(email, false);
 
                 if (user.Password != password)
                 {
@@ -38,7 +39,7 @@ namespace Editor.App
                     return;
                 }
 
-                HttpCookie cookie = AuthServices.SignIn(user);
+                HttpCookie cookie = AuthManager.SignIn(user);
                 Response.SetCookie(cookie);
 
                 Response.Redirect(FormsAuthentication.DefaultUrl, false);

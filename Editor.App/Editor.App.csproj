@@ -109,8 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\CustomResponse\ExceptionResponse.cs" />
+    <Compile Include="App_Start\AuthManager.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Authentication\AuthServices.cs" />
     <Compile Include="Controller\EditorController.cs" />
     <Compile Include="Controls\EditorNavMenu.ascx.cs">
       <DependentUpon>EditorNavMenu.ascx</DependentUpon>

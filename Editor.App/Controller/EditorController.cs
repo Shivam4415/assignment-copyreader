@@ -38,7 +38,7 @@ namespace Editor.App.Controller
                 if (ops == null)
                     throw new RequestForbidden(new ErrorResponse(ErrorResponseCode.InvalidRequestError, Messages.RequestForbidden));
 
-                EditorServices.Add(ops.ToList(), Convert.ToInt32(id));
+                EditorServices.SegregateOperations(ops.ToList(), Convert.ToInt32(id));
 
             }
             catch(RequestForbidden r)

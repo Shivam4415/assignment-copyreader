@@ -73,7 +73,7 @@ Editor = new function () {
                 _update(_change.ops);
                 _change = new Delta();
             }
-        }, 7 * 1000);
+        }, 5 * 1000);
 
     };
 

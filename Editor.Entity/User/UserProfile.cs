@@ -13,7 +13,7 @@ namespace Editor.Entity.User
 
         public string Password { get; set; }
 
-        public bool HasVerified { get; set; }
+        public bool HasVerifiedEmail { get; set; }
 
         public DateTime DateCreated { get; set; }
 
@@ -22,7 +22,7 @@ namespace Editor.Entity.User
         public DateTime? LastActive { get; set; }
 
         [JsonProperty]
-        public FileEditor editor { get; set; }
+        public FileEditor Editor { get; set; }
 
     }
 }

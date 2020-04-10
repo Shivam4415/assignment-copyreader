@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -70,6 +71,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthServices.cs" />
     <Compile Include="EditorServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +88,10 @@
     <ProjectReference Include="..\Editor.Entity\Editor.Entity.csproj">
       <Project>{2632E8B9-96BE-41F0-88D3-79731378278A}</Project>
       <Name>Editor.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor.Global\Editor.Global.csproj">
+      <Project>{3E0C7221-66FF-48DE-A71F-93EF397EEFB2}</Project>
+      <Name>Editor.Global</Name>
     </ProjectReference>
     <ProjectReference Include="..\Editor.Repo\Editor.Repo.csproj">
       <Project>{ED17847E-11E3-4F4A-8C6B-FE3C730C7D4A}</Project>

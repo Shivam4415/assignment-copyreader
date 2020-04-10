@@ -11,7 +11,20 @@ namespace Editor.Services
 {
     public static class EditorServices
     {
-        public static void InsertData(string values, int editorId, int? retain = null)
+        private static DataTable IdAsIntArrayTable(List<int> ids)
+        {
+            DataTable Ids = new DataTable();
+            Ids.Columns.Add("Id", typeof(int));
+            foreach (int id in ids)
+            {
+                DataRow dataRow = Ids.NewRow();
+                dataRow["Id"] = id;
+                Ids.Rows.Add(dataRow);
+            }
+            return Ids;
+        }
+
+        public static void UpdateMultiLineData(string values, int editorId, int? retain = null)
         {
             //Create Datatable and send values
             try
@@ -19,7 +32,7 @@ namespace Editor.Services
                 editorId = 1;
                 string[] arrValue = values.Split('\n');
                 int ordinal = 1;
-
+                int dataLength = 0;
 
                 DataTable dataTable = new DataTable();
                 // add static columns
@@ -30,36 +43,56 @@ namespace Editor.Services
 
                 if (retain != null)
                 {
-                    int i = 0;
-                    IEnumerable<ReaderData> readerData = new EditorRepository().GetReaderData(editorId, retain??1);
-                    foreach(ReaderData data in readerData)
-                    {
-                        int tempOrdinal = data.Ordinal;
-                        int tempLength = data.Length;
-                        string value = data.Value;
-                        int insertValueLength = arrValue[i].Length;
-                        int index = tempLength - insertValueLength;
-                        string updatedValue = data.Value.Substring(0,index) + arrValue[i];
-                        string lastString = data.Value.Substring(index);
+                    ReaderData data = new EditorRepository().GetReaderData(editorId, retain??1);
 
-                        data.Value = updatedValue;
-                        data.Length = updatedValue.Length;
-                        ordinal = data.Ordinal;
-                        DataRow dataRow = dataTable.NewRow();
-                        dataRow["Ordinal"] = ordinal + i;
-                        dataRow["EditorId"] = editorId;
-                        dataRow["Length"] = updatedValue.Length;
-                        dataRow["Characters"] = updatedValue;
-                        dataTable.Rows.Add(dataRow);
-                        i++;
-                    }
+                    int index = (retain??1) - (data.Length - data.Value.Length) + 1;
+                    string firstSplitValues = data.Value.Substring(0, index);
+                    string lastSplitValues = data.Value.Substring(index);
 
+                    arrValue[0] = firstSplitValues + arrValue[0];
+                    arrValue[arrValue.Length - 1] = arrValue[arrValue.Length - 1] + lastSplitValues;
+                    dataLength = data.Length - (data.Value.Length + 1);
+                    ordinal = data.Ordinal;
                 }
 
-                int dataLength = 0;
+                
                 for (var i = 0; i < arrValue.Length; i++)
                 {
-                    dataLength += arrValue[i].Length;
+                    dataLength += arrValue[i].Length + 1;
+                    DataRow dataRow = dataTable.NewRow();
+                    dataRow["Ordinal"] = ordinal + i;
+                    dataRow["EditorId"] = editorId;
+                    dataRow["Length"] = dataLength;
+                    dataRow["Characters"] = arrValue[i];
+                    dataTable.Rows.Add(dataRow);
+                }
+
+                new EditorRepository().Add(dataTable, arrValue.Length - 1, editorId, dataLength, retain);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public static void InsertInitialData(string values, int editorId)
+        {
+            try
+            {
+                editorId = 1;
+                string[] arrValue = values.Split('\n');
+                int ordinal = 1;
+                int dataLength = 0;
+
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("Ordinal", typeof(int));
+                dataTable.Columns.Add("EditorId", typeof(int));
+                dataTable.Columns.Add("Length", typeof(int));
+                dataTable.Columns.Add("Characters", typeof(string));
+
+                for (var i = 0; i < arrValue.Length; i++)
+                {
+                    dataLength += arrValue[i].Length + 1;
                     DataRow dataRow = dataTable.NewRow();
                     dataRow["Ordinal"] = ordinal + i;
                     dataRow["EditorId"] = editorId;
@@ -76,12 +109,48 @@ namespace Editor.Services
             }
         }
 
+        public static void UpdateSingleLineData(string values, int editorId, int retain)
+        {
+            //Create Datatable and send values
+            try
+            {
+                editorId = 1;
+                int ordinal = 1;
+                int dataLength = 0;
 
-        public static void DeleteData(int? index, int editorId, int? retain = null)
+                ReaderData data = new EditorRepository().GetReaderData(editorId, retain);
+
+                int index = retain - (data.Length - data.Value.Length) + 1;
+                string firstSplitValues = data.Value.Substring(0, index);
+                string lastSplitValues = data.Value.Substring(index);
+
+                values = firstSplitValues + values;
+                dataLength = data.Length - (data.Value.Length + 1);
+                ordinal = data.Ordinal;
+
+
+
+                new EditorRepository().Update(data.Id, data.Ordinal, dataLength, values);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
+        public static void DeleteAll(int index, int editorId, int retain)
         {
             try
             {
-                //new EditorRepository().Delete(values, retain);
+                if (index < 0)
+                    return;
+
+                ReaderData data = new EditorRepository().GetReaderData(editorId, retain);
+
+
+
+                new EditorRepository().DeleteByIndex(index, editorId);
             }
             catch
             {
@@ -113,27 +182,69 @@ namespace Editor.Services
             }
         }
 
-        public static void Add(List<Operation> operations, int id, Guid userId = new Guid())
+        public static void SegregateOperations(List<Operation> operations, int id, Guid userId = new Guid())
         {
             try
             
             {
-                if (operations.Count < 3 && operations[0].Insert != null || operations[1].Insert != null)
+                if(operations.Count() == 1)
                 {
-                    InsertData(operations[0].Insert?? operations[1].Insert, id, operations[0].Retain);
+                    if(operations[0].Insert != null)
+                    {
+                        InsertInitialData(operations[0].Insert, id);
+                    }
+                    else if(operations[0].Delete != null)
+                    {
+                        DeleteAll(operations[0].Delete ?? -1, id, operations[0].Delete??1);
+                    }
+
                 }
-                else if (operations.Count < 3 &&  operations[0].Delete != 0 || operations[1].Delete != 0)
+                else if(operations.Count() == 2 && operations[0].Retain != null)
                 {
-                    DeleteData(operations[0].Delete??operations[1].Delete, id, operations[0].Retain);
+                    if(operations[1].Delete != null)
+                    {
+
+                    }
+                    else if(operations[1].Insert != null)
+                    {
+                        if(operations[1].Insert.Split('\n').Length == 1)
+                        {
+                            UpdateSingleLineData(operations[1].Insert, id, operations[0].Retain ?? 1);
+                        }
+                        else
+                        {
+                            UpdateMultiLineData(operations[1].Insert, id, operations[0].Retain ?? 1);
+                        }
+                    }
+
                 }
-                else if (operations[1].Attributes != null)
+                else if(operations.Count() == 3)
                 {
-                    UpdateDataAttributes(operations[0].Retain, id, operations[1]);
+
                 }
                 else
                 {
+                    //Perform Following Algo
+                    //Get Data from database using Retain value you have.
+                    //Now loop over it and segregate each operations
+                    //perform each operations as task to update to database.
                     throw new NotFound("TestCases Mising");
+
                 }
+
+
+                //if (operations.Count < 3 &&  operations[0].Delete != 0 || operations[1].Delete != 0)
+                //{
+                //    DeleteData(operations[0].Delete??operations[1].Delete, id, operations[0].Retain);
+                //}
+                //else if (operations[1].Attributes != null)
+                //{
+                //    UpdateDataAttributes(operations[0].Retain, id, operations[1]);
+                //}
+                //else
+                //{
+                //    throw new NotFound("TestCases Mising");
+                //}
 
             }
             catch

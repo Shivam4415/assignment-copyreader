@@ -27,6 +27,7 @@ namespace Editor.App.App_Start
             routes.MapPageRoute("login", "login", "~/LoginPage.aspx");
             routes.MapPageRoute("editor", "editor", "~/EditorPage.aspx");
             routes.MapPageRoute("home", "home", "~/Home.aspx");
+            routes.MapPageRoute("error", "error", "~/ErrorPage.aspx");
 
             routes.EnableFriendlyUrls(settings);
 

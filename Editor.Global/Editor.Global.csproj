@@ -7,16 +7,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ED17847E-11E3-4F4A-8C6B-FE3C730C7D4A}</ProjectGuid>
+    <ProjectGuid>{3E0C7221-66FF-48DE-A71F-93EF397EEFB2}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Editor.Repo</RootNamespace>
-    <AssemblyName>Editor.Repo</AssemblyName>
+    <RootNamespace>Editor.Global</RootNamespace>
+    <AssemblyName>Editor.Global</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44339</IISExpressSSLPort>
+    <IISExpressSSLPort>44319</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -43,10 +43,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -73,8 +71,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthRepository.cs" />
-    <Compile Include="EditorRepository.cs" />
+    <Compile Include="CacheManager.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,12 +83,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Editor.Entity\Editor.Entity.csproj">
-      <Project>{2632E8B9-96BE-41F0-88D3-79731378278A}</Project>
-      <Name>Editor.Entity</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -105,9 +97,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51447</DevelopmentServerPort>
+          <DevelopmentServerPort>55680</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44339/</IISUrl>
+          <IISUrl>https://localhost:44319/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
