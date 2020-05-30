@@ -8,7 +8,7 @@ using System.Web.Routing;
 
 namespace Editor.App.App_Start
 {
-    public class RouteConfig
+    public static class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
@@ -19,13 +19,15 @@ namespace Editor.App.App_Start
             GlobalConfiguration.Configuration.EnsureInitialized();
 
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
+
             RouteTable.Routes.MapHttpRoute( name: "API Default", routeTemplate: "api/v1/{controller}/{id}", defaults: new { id = RouteParameter.Optional });
 
             // Web API configuration and services
 
 
             routes.MapPageRoute("login", "login", "~/LoginPage.aspx");
-            routes.MapPageRoute("editor", "editor", "~/EditorPage.aspx");
+            //routes.MapPageRoute("editor1", "editor", "~/EditorPage.aspx");
+            routes.MapPageRoute("editor", "editor/{editorId}", "~/EditorPage.aspx");
             routes.MapPageRoute("home", "home", "~/Home.aspx");
             routes.MapPageRoute("error", "error", "~/ErrorPage.aspx");
 

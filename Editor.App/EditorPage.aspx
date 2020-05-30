@@ -5,25 +5,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="./Js/uikit/uikit.theme.css" rel="stylesheet" />
-    <script src="./Js/uikit/uikit.js"></script>
-    <script src="./Js/jquery/jquery-3.4.1.min.js"></script>
-    <script src="./Js/uikit/uikit-icons.js"></script>
+
+
+    <link href="/Js/uikit/uikit.theme.css" rel="stylesheet" />
+    <script type="text/javascript" src="/Js/uikit/uikit.js"></script>
+    <script type="text/javascript" src="/Js/jquery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/Js/uikit/uikit-icons.js"></script>
 
     <!-- Include Quill stylesheet -->
     <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet"/>
-
     <!-- Include the Quill library -->
     <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
 
-    <script src="./Js/page/Page.Editor.js"></script>
-
-
+    <script type="text/javascript" src="/Js/page/Page.Editor.js"></script>
 
 </head>
 <body>
-
-
+<input id="editorId" type="hidden" runat="server"/>
 <nav class="uk-height-1-5 uk-background-default">
      <div id="name" class="uk-flex">
          <div class="uk-width-1-5 uk-padding-top uk-padding-small-left">

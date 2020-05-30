@@ -1,9 +1,9 @@
-﻿using Editor.App.Api.CustomResponse;
-using Editor.Entity;
-using Editor.Entity.Data;
-using Editor.Entity.Enum;
-using Editor.Entity.Exceptions;
-using Editor.Services;
+﻿using Document.Library.Entity;
+using Document.Library.Entity.Exceptions;
+using Document.Library.Globals.Enum;
+using Document.Library.ServiceLayer;
+using Editor.App.Api.CustomResponse;
+using Editor.App.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +16,61 @@ namespace Editor.App.Controller
     [RoutePrefix("api/v1/editor")]
     public class EditorController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+
+        [HttpGet]
+        public IEnumerable<FileEditor> Get()
         {
-            return new string[] { "value1", "value2" };
+            UserProfile _user = AuthManager.CurrentUser;
+            if (_user == null)
+                throw ExceptionResponse.Forbidden(Request, Messages.InvalidCredentials);
+
+            try
+            {
+                IEnumerable<FileEditor> editors = EditorServices.GetAll(_user.Id);
+                return editors;
+            }
+            catch (NotFound ex)
+            {
+                throw ExceptionResponse.NotFound(Request, ex.Message);
+            }
+            catch (RequestForbidden ex)
+            {
+                throw ExceptionResponse.Forbidden(Request, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw ExceptionResponse.ServerErrorResponse(Request);
+            }
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+
+
+        public FileEditor Post(FileEditor file)
         {
-            return "value";
+
+            UserProfile _user = AuthManager.CurrentUser;
+
+            if (_user == null)
+                throw ExceptionResponse.Forbidden(Request, Messages.InvalidCredentials);
+
+            try
+            {
+                const string fileName = "Unititled";
+                return EditorServices.Create(file?.Name??fileName, _user.Id);
+
+            }
+            catch (NotFound ex)
+            {
+                throw ExceptionResponse.NotFound(Request, ex.Message);
+            }
+            catch (RequestForbidden ex)
+            {
+                throw ExceptionResponse.Forbidden(Request, ex.Message);
+            }
+            catch (Exception)
+            {
+                throw ExceptionResponse.ServerErrorResponse(Request);
+            }
         }
 
         // POST api/<controller>
@@ -45,20 +90,11 @@ namespace Editor.App.Controller
             {
                 throw ExceptionResponse.Forbidden(Request, r.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
         }
 
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
     }
 }

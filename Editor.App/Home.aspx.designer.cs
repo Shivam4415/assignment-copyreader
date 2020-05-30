@@ -15,12 +15,12 @@ namespace Editor.App
     {
 
         /// <summary>
-        /// EditorNavMenu control.
+        /// menuEditor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Editor.App.Controls.EditorNavMenu EditorNavMenu;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuEditor;
     }
 }

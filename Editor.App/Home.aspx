@@ -1,25 +1,23 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Editor.App.Document" %>
 
-<%@ Register Src="~/Controls/EditorNavMenu.ascx" TagPrefix="uc1" TagName="EditorNavMenu" %>
-
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-        <link href="./Js/uikit/uikit.theme.css" rel="stylesheet" />
+    <link href="./Js/uikit/uikit.theme.css" rel="stylesheet" />
     <script src="./Js/uikit/uikit.js"></script>
     <script src="./Js/jquery/jquery-3.4.1.min.js"></script>
     <script src="./Js/uikit/uikit-icons.js"></script>
-<%--    <script src="./Js/page/Page.Home.js"></script>--%>
+    <script src="./Js/page/Page.Home.js"></script>
 </head>
 <body>
 <nav class="uk-navbar uk-height-1-3 uk-background-default">
     <div class="uk-padding-bottom">
         <div class="uk-navbar-left">
             <div class="uk-flex uk-flex-between uk-card uk-card-default uk-card-body uk-margin-top">
-                <uc1:EditorNavMenu runat="server" id="EditorNavMenu" />
+                <div id="menuEditor" runat="server"><a><span class="uk-icon" uk-icon="user"></span>Create New Document</a></div>
             </div>
         </div>
     </div>

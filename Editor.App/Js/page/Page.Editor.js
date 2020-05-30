@@ -7,8 +7,8 @@ Editor = new function () {
         editorContainer = "#editorContainer";
 
     var _change,
-        _quill,
-        editorId = 0;
+        _quill;
+
 
     var toolbarOptions = [
         ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
@@ -101,7 +101,7 @@ Editor = new function () {
 
     var _update = function (data) {
         return $.ajax({
-            url: '/api/v1/editor/' + editorId,
+            url: '/api/v1/editor/' + editorId.value,
             type: 'POST',
             data: JSON.stringify(data),
             success: _onAddHandler,
@@ -124,4 +124,4 @@ window.onload = function () {
     var url = window.location.toString();
     Editor.Start();
 
-}
+};

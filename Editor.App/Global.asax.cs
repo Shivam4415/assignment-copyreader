@@ -1,7 +1,7 @@
-﻿using Editor.App.App_Start;
-using Editor.Entity.Static_Class;
-using Editor.Entity.User;
-using Editor.Services;
+﻿using Document.Library.Entity;
+using Document.Library.Globals.Global;
+using Document.Library.ServiceLayer;
+using Editor.App.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

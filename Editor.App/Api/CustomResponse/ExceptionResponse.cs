@@ -1,6 +1,6 @@
-﻿using Editor.Entity;
-using Editor.Entity.Enum;
-using Editor.Entity.Exceptions;
+﻿using Document.Library.Entity;
+using Document.Library.Entity.Exceptions;
+using Document.Library.Globals.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;

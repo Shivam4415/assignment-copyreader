@@ -14,18 +14,5 @@ namespace Editor.App
 
         }
 
-
-        protected void createNewEditor(object sender, EventArgs e)
-        {
-            try
-            {
-                Response.Redirect("./editor", false);
-            }
-            catch
-            {
-                Response.Redirect("Error.aspx");
-            }
-        }
-
     }
 }
