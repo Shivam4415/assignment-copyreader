@@ -12,7 +12,7 @@ namespace Document.Library.Entity
     public class FileEditor
     {
         public int Id { get; }
-        public Guid OwnerId { get; set; }
+        public int OwnerId { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, Order = 7)]
         public string Name { get; set; }
@@ -23,7 +23,7 @@ namespace Document.Library.Entity
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, Order = 7)]
         public DateTime DateModified { get; set; }
 
-        public Guid ModifiedBy { get; set; }
+        public int ModifiedBy { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, Order = -92)]
         [JsonConverter(typeof(StringEnumConverter))]

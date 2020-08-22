@@ -60,6 +60,7 @@
     <Compile Include="Enum\ValidationStatusCode.cs" />
     <Compile Include="Global\GlobalConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

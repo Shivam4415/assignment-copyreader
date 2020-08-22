@@ -18,6 +18,8 @@
     <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
 
     <script type="text/javascript" src="/Js/page/Page.Editor.js"></script>
+    <script  src="Js/modal/Modal.Share.js"></script>
+    <script type="text/javascript" src="/Js/Class/D.ReaderData.js"></script>
 
 </head>
 <body>

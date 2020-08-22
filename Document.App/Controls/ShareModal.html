@@ -1,0 +1,58 @@
+﻿<div id="shareDialog" uk-modal>
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close-default" uk-close></a>
+        <div class="uk-modal-header uk-flex uk-flex-middle">
+            <span class="uk-preserve uk-margin-right" uk-icon="share-large"></span>
+            <span>Share With Others</span>
+        </div>
+
+        <div class="uk-position-center" id="shareDlgLoadingCircle" uk-spinner hidden></div>
+        <div class="uk-modal-body">
+            <div class="uk-text-justify uk-modal-description">
+                <label id="headerText">Enter the email addresses to share your map. Only enter information of others if you have their consent.</label>
+            </div>
+            <div class="uk-margin-top">
+                <input type="text" class="uk-form-medium uk-width-1-1 uk-input" id="shareUserEmail" placeholder="Enter email addresses" autofocus />
+            </div>
+            <div class="uk-text-right uk-margin-small-top">
+                <span class="uk-alert uk-margin-remove uk-padding-remove mpl-email-validation uk-text-small uk-float-left" hidden></span>
+                <!--<span id="shareUserEditPermissions" class="uk-width-1-6 uk-cursor-pointer">
+                    <span class="uk-margin-small-right" uk-icon="checkbox"></span>Can edit
+                </span>-->
+            </div>
+            <div class="uk-margin-small-top mpl-simple-sharing-view uk-clearfix">
+                <label class="uk-form-label uk-width-1-1">Shared with <span id="numberOfSharedUsers"></span> <a id="showAdvancedSharingView">Show</a></label>
+            </div>
+            <div class="mpl-advanced-sharing-view uk-margin-small-top uk-clearfix" hidden>
+                <label class="uk-form-label uk-width-1-1">Sharing details. <a id="showSimpleSharingView">Hide</a></label>
+            </div>
+            <div class="mpl-advanced-sharing-view uk-margin-small-top uk-width-1-1" hidden>
+                <div class="uk-container uk-padding-remove" id="user-perm-table-container">
+                    <table class="uk-table uk-margin-remove">
+                        <thead>
+                            <tr>
+                                <th class="uk-width-3-5">User</th>
+                                <th class="uk-width-2-5">Permissions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2" class="uk-padding-remove">
+                                    <div class="uk-overflow-auto uk-height-small">
+                                        <table class="uk-table uk-table-striped uk-text-medium uk-margin-remove" id="userPermissionsTable">
+                                            <tr></tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="uk-text-right uk-modal-footer">
+            <button class="uk-button uk-button-default uk-modal-close uk-margin-right">Cancel</button>
+            <button class="uk-button uk-button-primary" id="shareButton">Save</button>
+        </div>
+    </div>
+</div>

@@ -9,10 +9,8 @@
     <script src="./Js/uikit/uikit.js"></script>
     <script src="./Js/jquery/jquery-3.4.1.min.js"></script>
     <script src="./Js/uikit/uikit-icons.js"></script>
-    <script src="./Js/modal/Modal.Registration.js"></script>
-    <!-- #include file="~/Controls/UserRegistration.html" -->
-
 </head>
+
 <body class="uk-height-1-1">
     <div class="uk-flex uk-height-1-1 uk-flex-middle uk-text-center uk-overflow-auto">
         <div id="container" class="uk-container">
@@ -37,13 +35,12 @@
 
                     <div class="uk-flex uk-flex-between">
                         <asp:Button ID="btnSignIn" class="uk-button uk-button-primary uk-width-1-1@l" name="SignIn" runat="server" Text="LogIn" OnClick="btnLogin" />
+<%--                        <asp:Button ID="btnSignUp" class="uk-button uk-button-primary uk-width-1-1@l" name="SignIn" runat="server" Text="SignUp" OnClick="button_SignUp" />--%>
+                        <button id="btnSignUp" type="button" runat="server" class="uk-margin-left uk-button uk-button-secondary uk-width-1-1@l" name="SignUp" onserverclick="button_SignUp">SignUp</button>
+
                     </div>
                 </fieldset>
             </form>
-            <div class="uk-padding">
-                <button id="btnSignUp" class="uk-button uk-button-secondary uk-width-1-1@l" name="SignUp" >SignUp</button>
-            </div>
-
         </div>
 
         </div>

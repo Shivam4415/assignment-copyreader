@@ -50,10 +50,6 @@ namespace Document.App
                 {
                     id = GetRequestedId();
                     editorId.Value = Page.RouteData.Values["editorId"].ToString();
-
-
-                    //editor = EditorServices.GetAll(id);
-
                 }
             }
             catch

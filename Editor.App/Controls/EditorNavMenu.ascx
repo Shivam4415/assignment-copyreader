@@ -1,2 +1,0 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EditorNavMenu.ascx.cs" Inherits="Editor.App.Controls.EditorNavMenu" %>
-<div id="menuEditor" runat="server"><a><span class="uk-icon" uk-icon="user"></span>Create New Document</a></div>

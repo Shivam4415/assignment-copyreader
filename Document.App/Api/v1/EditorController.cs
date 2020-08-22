@@ -43,7 +43,7 @@ namespace Document.App.Api.v1
         }
 
         [HttpGet]
-        public IEnumerable<Operation> Get(string id)
+        public IEnumerable<ReaderData> Get(string id)
         {
             UserProfile _user = AuthManager.CurrentUser;
             if (_user == null)
@@ -51,8 +51,7 @@ namespace Document.App.Api.v1
 
             try
             {
-                List<Operation> data = null; // EditorServices.GetData(_user.Id, int.Parse(id));
-                return data.AsEnumerable<Operation>();
+                return null;
             }
             catch (NotFound ex)
             {
@@ -97,16 +96,16 @@ namespace Document.App.Api.v1
         }
 
         // POST api/<controller>
-        public void Post(string id, [FromBody]IEnumerable<Operation> ops)
+        public void Post(string id, [FromBody]IEnumerable<ReaderData> data)
         {
             try
             {
 
 
-                if (ops == null)
+                if (data == null)
                     throw new RequestForbidden(new ErrorResponse(ErrorResponseCode.InvalidRequestError, Messages.RequestForbidden));
 
-                EditorServices.SegregateOperations(ops.ToList(), Convert.ToInt32(id));
+                //EditorServices.SegregateOperations(ops.ToList(), Convert.ToInt32(id));
 
             }
             catch (RequestForbidden r)

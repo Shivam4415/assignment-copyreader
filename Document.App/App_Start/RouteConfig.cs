@@ -35,6 +35,7 @@ namespace Document.App.App_Start
             routes.MapPageRoute("editor", "editor/{editorId}", "~/EditorPage.aspx");
             routes.MapPageRoute("home", "home", "~/Home.aspx");
             routes.MapPageRoute("error", "error", "~/Error.aspx");
+            routes.MapPageRoute("register", "register", "~/Register.aspx");
 
             routes.EnableFriendlyUrls(settings);
 

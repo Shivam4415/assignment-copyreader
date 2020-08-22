@@ -41,9 +41,9 @@ namespace Document.App
             if (absolutePath.Equals("/404") || absolutePath.Equals("/404.aspx"))
                 return true;
 
-            if ((absolutePath.Equals("/emailconfirmation.aspx") || absolutePath.Equals("/emailconfirmation") || absolutePath.Equals("/confirm")) && query.Contains("evid="))
+            if ((absolutePath.Equals("/register.aspx") || absolutePath.Equals("/register") || absolutePath.Equals("/confirm")))
             {
-                Response.Redirect(FormsAuthentication.LoginUrl + "?" + Request.QueryString, false);
+                //Response.Redirect(FormsAuthentication.LoginUrl + "?" + Request.QueryString, false);
                 return true;
             }
 
@@ -58,6 +58,7 @@ namespace Document.App
         {
             try
             {
+                
                 string absolutePath = Request.Url.AbsolutePath.ToLower();
 
                 if (absolutePath.Equals("/"))
@@ -65,7 +66,6 @@ namespace Document.App
                     Response.Redirect(FormsAuthentication.LoginUrl, false);
                     return;
                 }
-
                 bool ajaxRequest = false;
 
                 if (absolutePath.ToLower().Contains("/api/"))

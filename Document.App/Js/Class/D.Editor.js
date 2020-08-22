@@ -7,9 +7,9 @@
             this._parent = this._root = root;
         }
 
-        if (data) {
+        //if (data) {
 
-        }
+        //}
 
     };
 

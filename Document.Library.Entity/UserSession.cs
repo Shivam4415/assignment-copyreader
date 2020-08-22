@@ -8,7 +8,7 @@ namespace Document.Library.Entity
 {
     public class UserSession
     {
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
         public Guid Id { get; set; }
         public string Email { get; set; }
         public bool IsPersistent { get; set; }

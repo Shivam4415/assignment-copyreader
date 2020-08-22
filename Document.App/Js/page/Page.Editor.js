@@ -2,7 +2,7 @@
 
 Editor = new function () {
 
-    var
+    const
         toolbar = "#toolbar",
         editorContainer = "#editorContainer",
         btnShare = "#btnShare" ;
@@ -38,10 +38,7 @@ Editor = new function () {
     };
 
     var _initEditor = function () {
-        
-
         Delta = Quill.import('delta');
-
 
         _quill = new Quill(editorContainer, {
             modules: {
@@ -92,9 +89,11 @@ Editor = new function () {
                 console.log('changes', _change);
 
                 _update(_change.ops);
+                var _rData = new ReaderData();
+                _rData.getdata();
                 _change = new Delta();
             }
-        }, 5 * 1000);
+        }, 10 * 1000);
 
     };
 

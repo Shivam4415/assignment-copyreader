@@ -56,5 +56,9 @@ namespace Document.Library.Entity
 
         public string Image { get; set; }
 
+        public int Start { get; set; }
+
+        public int Length { get; set; }
+
     }
 }

@@ -13,10 +13,16 @@ namespace Document.App
 {
     public partial class LoginPage : System.Web.UI.Page
     {
-
-        protected void OnButtonClick(object sender, EventArgs e)
+        protected void button_SignUp(object sender, EventArgs e)
         {
-            Response.Redirect(FormsAuthentication.DefaultUrl, false);
+            try
+            {
+                Response.Redirect("/register", false);
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("Error.aspx");
+            }
         }
 
         protected void btnLogin(object sender, EventArgs e)

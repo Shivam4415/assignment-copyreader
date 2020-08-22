@@ -129,7 +129,7 @@ namespace Document.Library.Repo
 
 
 
-        public IEnumerable<FileEditor> GetAll(Guid userId)
+        public IEnumerable<FileEditor> GetAll(int userId)
         {
             try
             {
@@ -204,7 +204,7 @@ namespace Document.Library.Repo
         }
 
 
-        public FileEditor Create(string name, Guid userId)
+        public FileEditor Create(string name, int userId)
         {
             try
             {
