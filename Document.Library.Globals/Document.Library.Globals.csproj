@@ -53,11 +53,14 @@
   <ItemGroup>
     <Compile Include="CacheManager.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Enum\Color.cs" />
     <Compile Include="Enum\ErrorCode.cs" />
     <Compile Include="Enum\ErrorResponseCode.cs" />
     <Compile Include="Enum\Header.cs" />
     <Compile Include="Enum\Permission.cs" />
+    <Compile Include="Enum\Size.cs" />
     <Compile Include="Enum\ValidationStatusCode.cs" />
+    <Compile Include="GlobalFunctions.cs" />
     <Compile Include="Global\GlobalConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validator.cs" />
@@ -67,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseMigration.txt" />
+    <Content Include="Global\SQLQuery_RudderStack.sql" />
     <Content Include="Global\SQL_Query.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

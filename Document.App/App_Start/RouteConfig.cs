@@ -33,7 +33,8 @@ namespace Document.App.App_Start
             routes.MapPageRoute("login", "login", "~/LoginPage.aspx");
             //routes.MapPageRoute("editor1", "editor", "~/EditorPage.aspx");
             routes.MapPageRoute("editor", "editor/{editorId}", "~/EditorPage.aspx");
-            routes.MapPageRoute("home", "home", "~/Home.aspx");
+            //routes.MapPageRoute("home", "home", "~/Home.aspx");
+            routes.MapPageRoute("product", "product", "~/ProductPage.aspx");
             routes.MapPageRoute("error", "error", "~/Error.aspx");
             routes.MapPageRoute("register", "register", "~/Register.aspx");
 

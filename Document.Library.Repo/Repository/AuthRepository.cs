@@ -22,7 +22,7 @@ namespace Document.Library.Repo.Repository
                 {
                     var param = new DynamicParameters();
                     param.Add("@email", email);
-                    return con.Query<UserProfile>("[GetUserProfileByEmail]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    return con.Query<UserProfile>("[RudderStack].[GetUserProfileByEmail]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
 
                 }
             }
@@ -41,7 +41,7 @@ namespace Document.Library.Repo.Repository
                     var param = new DynamicParameters();
                     param.Add("@id", userId);
 
-                    return con.Query<UserProfile>("[GetUserProfileById]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    return con.Query<UserProfile>("[RudderStack].[GetUserProfileById]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
                 }
             }
             catch
@@ -59,7 +59,7 @@ namespace Document.Library.Repo.Repository
                     var param = new DynamicParameters();
                     param.Add("@sessionId", sessionId);
 
-                    con.Execute("[RemoveUserSession]", param, commandType: CommandType.StoredProcedure);
+                    con.Execute("[RudderStack].[RemoveUserSession]", param, commandType: CommandType.StoredProcedure);
                 }
             }
             catch
@@ -84,7 +84,7 @@ namespace Document.Library.Repo.Repository
                     param.Add("@accessTokenExpiry", session.AccessTokenExpiry);
                     param.Add("@lastCheckAccessToken", session.LastCheckAccessToken);
 
-                    return con.Query("[SetUserSession]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    return con.Query("[RudderStack].[SetUserSession]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
                 }
             }
             catch
@@ -102,7 +102,7 @@ namespace Document.Library.Repo.Repository
                     var param = new DynamicParameters();
                     param.Add("@sessionId", sessionId);
 
-                    return con.Query<UserSession>("[GetUserSession]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    return con.Query<UserSession>("[RudderStack].[GetUserSession]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
                 }
             }
             catch
@@ -128,7 +128,7 @@ namespace Document.Library.Repo.Repository
                     param.Add("@lastCheckAccessToken", session.LastCheckAccessToken);
                     //param.Add("@isOtpVerified", session.IsOtpVerified);
 
-                    con.Query<UserSession>("[UpdateUserSession]", param, commandType: CommandType.StoredProcedure);
+                    con.Query<UserSession>("[RudderStack].[UpdateUserSession]", param, commandType: CommandType.StoredProcedure);
                 }
             }
             catch
@@ -150,7 +150,7 @@ namespace Document.Library.Repo.Repository
                     param.Add("@newExpirationTime", newExpirationTime);
                     param.Add("@lastCheckAccessToken", lastCheckAccessToken);
 
-                    con.Query<UserSession>("[SlideUserSessionExpiration]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    con.Query<UserSession>("[RudderStack].[SlideUserSessionExpiration]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
                 }
             }
             catch

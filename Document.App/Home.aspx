@@ -9,6 +9,7 @@
     <script src="./Js/uikit/uikit.js"></script>
     <script src="./Js/jquery/jquery-3.4.1.min.js"></script>
     <script src="./Js/uikit/uikit-icons.js"></script>
+    <script src="./Js/Editor.js"></script>
     <script src="./Js/page/Page.Home.js"></script>
 </head>
 <body>

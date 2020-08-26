@@ -144,7 +144,7 @@ Home = new function () {
             error: _showNotification,
             contentType: 'application/json',
             dataType: 'json'
-        }).done(function () { M.RealtimeNotificationConsumer.destroy(); });
+        });
     };
 
 

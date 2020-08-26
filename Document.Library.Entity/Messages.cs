@@ -51,7 +51,6 @@ namespace Document.Library.Entity
         public static string AccountLicenseLimitError { get { return "You have reached maximum limit of users on your account. Please upgrade your account to add more users."; } }
         public static string AccountLicenseLimitErrorForAdminstator { get { return "You have reached maximum limit of users on your account. Please contact your account owner to upgrade your account for adding more users."; } }
 
-        public static string StopPointsPerRouteLimitError { get { return "You can have maximum {0} stoppoints in your route. You may <a href='https://mapline.com/contact-us/' target=\"_blank\">contact our support team</a> to get an appropriate plan."; } }
         public static string AccountMemberExists { get { return "{0} is a registered user. Please add user with a different e-mail address."; } }
         public static string AccountOwnerConstraint { get { return "Can't add another account owner."; } }
         public static string AddPermissionDenied { get { return "User don't have permission to add {0}."; } }
@@ -87,17 +86,13 @@ namespace Document.Library.Entity
         public static string ObjectLimitError { get { return "You have reached your limit of {0}."; } }
         public static string ObjectNotFound { get { return "Invalid request body. Unable to find a {0} matching the provided identifer."; } }
         public static string ObjectPaylodNotFound { get { return "Invalid request body. No {0} object found in the request."; } }
-        public static string OrphanAccountUser { get { return "User is no longer associated with an active Mapline account."; } }
         public static string ApiLimitError { get { return "You have reached your limit of web api request."; } } //
-        //public static string ExcelAddinUpgrade { get { return "A new update (V{0}) is available for Mapline's Excel Add-in. Please download the latest version " + ServiceHost.Mapline + "download-excel-add-in/ to continue."; } }
-        // In this message removed "download the latest version" for making it workinng on excel addin , where we are updating "download-excel-add-in" to "download the latest version"
         public static string ExcelAddinLimitError { get { return "You have reached installation limit. Please uninstall it from one computer and try again."; } }
 
         public static string ExcelAddinInvalidLicense { get { return "Your license in not valid. Please uninstall it and try again."; } }
         public static string RegisterUserDataError { get { return "Email address and/or Name is not found."; } }
 
         public static string RegisterIfEmailExists { get { return "This email is already registered."; } }
-        public static string ServerErrorSupport { get { return "There was a server error while submitting your information. Please try again or <a href='https://mapline.com/contact-us/' target=\"_blank\">contact our support team</a> if the issue persists."; } }
         public static string ColumnLimitError { get { return "We currently support 256 headers in a single dataset. You have reached your limit of headers."; } }
 
         public static string NewUserAdded { get { return "{0} was successfully added to your account. An email was sent to the new user with login instructions."; } }
@@ -129,7 +124,6 @@ namespace Document.Library.Entity
 
         public static string EmbedPermissionDenied { get { return "You don't have permission to embed your {0}. Please contact your Account Owner."; } }
         public static string CvcCheckNotDone { get { return "Your card's security code is incorrect."; } }
-        public static string DomainLockDown { get { return "Great news! Your company already has an Enterprise Mapline account! Please reach out to the following contact to request access to Mapline, or <a href = 'https://mapline.com/support/' target=\"_blank\">Contact Us</a> if you are having trouble getting access."; } }
         public static string AddUserDeniedForLockedAccount { get { return "Your account has been configured to only allow email addresses from the {0}"; } }
     }
 

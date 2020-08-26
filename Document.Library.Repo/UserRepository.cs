@@ -26,7 +26,7 @@ namespace Document.Library.Repo
                     param.Add("@phone", phone);
                     param.Add("@password", password);
                     param.Add("@company", company);
-                    return con.Query<UserProfile>("[RegisterUser]", param, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
+                    return con.Query<UserProfile>("[RudderStack].[RegisterUser]", param, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
                 }
             }
             catch
@@ -46,7 +46,7 @@ namespace Document.Library.Repo
                 {
                     var param = new DynamicParameters();
                     param.Add("@email", email);
-                    return con.Query<bool>("[IsUserExists]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                    return con.Query<bool>("[RudderStack].[IsUserExists]", param, commandType: CommandType.StoredProcedure).FirstOrDefault();
                 }
             }
             catch

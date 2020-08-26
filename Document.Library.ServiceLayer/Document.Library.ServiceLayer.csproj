@@ -46,6 +46,7 @@
     <Compile Include="AuthServices.cs" />
     <Compile Include="EditorServices.cs" />
     <Compile Include="EmailServices.cs" />
+    <Compile Include="ProductServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharingServices.cs" />
     <Compile Include="UserServices.cs" />

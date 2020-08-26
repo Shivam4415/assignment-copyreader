@@ -54,8 +54,11 @@
     <Compile Include="FileEditor.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="Operation.cs" />
+    <Compile Include="Price.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReaderData.cs" />
+    <Compile Include="UserProduct.cs" />
     <Compile Include="UserProfile.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="UserSession.cs" />

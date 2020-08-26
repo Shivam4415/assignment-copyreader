@@ -2,12 +2,12 @@
 /* https://fonts.googleapis.com/css?family=Montserrat generated on 2019-04-01T14:49:22+00:00 */
 
 
-@font-face {
+/*@font-face {
     font-family: 'Montserrat1';
     font-style: normal;
     font-weight: 400;
     src: url('../../fonts/montserrat-regular.woff2') format('woff2'), url('../../fonts/montserrat-regular.woff') format('woff');
-}
+}*/
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -129,11 +129,11 @@ canvas, img, video {
     }
 }
 
-/*Mapline Code starts*/
+/*Custom Code starts*/
 svg, svg * {
     pointer-events: none; /*This is to prevent click events to trigger inside svg*/
 }
-    /*Mapline Code ends*/
+    /*Custom Code ends*/
 
     svg:not(:root) {
         overflow: hidden
@@ -344,7 +344,7 @@ template {
     content: '1600px'
 }
 
-/* Mapline Change Moved to minifyerror.css to support minification
+/* Custom Change Moved to minifyerror.css to support minification
     :root {
     --uk-breakpoint-s:640px;--uk-breakpoint-m:960px;--uk-breakpoint-l:1200px;--uk-breakpoint-xl:1600px
 }*/
@@ -1062,7 +1062,7 @@ button.uk-icon:not(:disabled) {
             border-color: #ccc;
         }
 
-        /*mapline code*/
+        /*Custom code*/
         .uk-input.uk-background-default:focus, .uk-textarea.uk-background-default:focus {
             background-color: #fff;
         }
@@ -1074,7 +1074,7 @@ button.uk-icon:not(:disabled) {
 #userGrid .slick-row:hover, #apiGrid .slick-row:hover {
     background-color: transparent !important;
 }
-/*end mapline code*/
+/*end Custom code*/
 
 .uk-input:disabled, .uk-select:disabled, .uk-textarea:disabled {
     background-color: #f2f2f2;
@@ -1093,22 +1093,22 @@ button.uk-icon:not(:disabled) {
 
 .uk-textarea::-ms-input-placeholder {
     color: #ccc !important;
-    /*---MaplineCode Start---*/
+    /*---CustomCode Start---*/
     position: relative !important;
     left: 50%;
     transform: translate(-50%,200%);
     width: max-content;
-    /*---MaplineCode END---*/
+    /*---CustomCode END---*/
 }
 
 .uk-textarea::placeholder {
     color: #ccc;
-    /*---MaplineCode Start---*/
+    /*---CustomCode Start---*/
     position: relative !important;
     left: 50%;
     transform: translate(-50%,200%);
     width: max-content;
-    /*---MaplineCode END---*/
+    /*---CustomCode END---*/
 }
 
 .uk-form-small {
@@ -1164,7 +1164,7 @@ button.uk-icon:not(:disabled) {
 
 input.uk-form-width-xsmall {
     /*width: 50px*/
-    width: 40px; /*MaplineCode*/
+    width: 40px; /*CustomCode*/
 }
 
 select.uk-form-width-xsmall {
@@ -1434,13 +1434,13 @@ select.uk-form-width-xsmall {
     background-origin: border-box;
     background-size: calc(200% + 1px);
     background-position-x: calc(100% + 1px);
-    /* <Mapline code>: will undo selection of text inside button */
+    /* <Custom code>: will undo selection of text inside button */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /* </Mapline code> */
+    /* </Custom code> */
 }
 
     .uk-button:not(:disabled) {
@@ -1738,13 +1738,13 @@ select.uk-form-width-xsmall {
 
 .uk-section-default {
     background: #fff;
-    border: 1.5px solid #ccc; /*MaplineCode*/
-    border-radius: 8px; /*MaplineCode*/
+    border: 1.5px solid #ccc; /*CustomCode*/
+    border-radius: 8px; /*CustomCode*/
 }
 
 .uk-section-muted {
     background: #f2f2f2;
-    padding: 20px; /*MaplineCode*/
+    padding: 20px; /*CustomCode*/
 }
 
 .uk-section-primary {
@@ -2689,7 +2689,7 @@ select.uk-form-width-xsmall {
     text-transform: uppercase;
 }
 
-    /*<mapline code>*/
+    /*<Custom code>*/
     .uk-badge.uk-badge-primary {
         border-radius: 6px;
         background: #f38c2f;
@@ -2699,7 +2699,7 @@ select.uk-form-width-xsmall {
         border-radius: 6px;
         background: #1e93e5;
     }
-    /*</mapline code>*/
+    /*</Custom code>*/
 
     .uk-badge:focus, .uk-badge:hover {
         color: #fff;
@@ -2815,9 +2815,9 @@ select.uk-form-width-xsmall {
 .uk-comment-header {
     margin-bottom: 20px;
     padding: 20px;
-    border: 1.5px solid #ccc; /*MaplineCode*/
-    border-radius: 6px; /*MaplineCode*/
-    background: #fff; /*MaplineCode*/
+    border: 1.5px solid #ccc; /*CustomCode*/
+    border-radius: 6px; /*CustomCode*/
+    background: #fff; /*CustomCode*/
 }
 
     .uk-comment-body::after, .uk-comment-body::before, .uk-comment-header::after, .uk-comment-header::before {
@@ -2906,9 +2906,9 @@ select.uk-form-width-xsmall {
     color: grey;
     transition: .2s ease-in-out;
     transition-property: color,background-color,border-color,box-shadow;
-    font-size: 14px; /*Mapline code*/
-    text-transform: uppercase; /*Mapline code*/
-    letter-spacing: 2px; /*Mapline code*/
+    font-size: 14px; /*Custom code*/
+    text-transform: uppercase; /*Custom code*/
+    letter-spacing: 2px; /*Custom code*/
 }
 
     .uk-search-input:focus {
@@ -2926,7 +2926,7 @@ select.uk-form-width-xsmall {
         color: #ccc;
         letter-spacing: 2px;
         font-weight: 800;
-        text-transform: uppercase; /*MaplineCode*/
+        text-transform: uppercase; /*CustomCode*/
     }
 
 .uk-search-icon:focus {
@@ -3043,11 +3043,11 @@ select.uk-form-width-xsmall {
         color: grey
     }
 
-/* Start: </Mapline code> */
+/* Start: </Custom code> */
 .uk-search-mappane {
     width: 365px;
 }
-/* End: </Mapline code> */
+/* End: </Custom code> */
 
 .uk-nav, .uk-nav ul {
     margin: 0;
@@ -3058,13 +3058,13 @@ select.uk-form-width-xsmall {
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 32px;
-    /* <Mapline code>: will undo selection of text inside button */
+    /* <Custom code>: will undo selection of text inside button */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /* </Mapline code> */
+    /* </Custom code> */
 }
 
     .uk-nav li > a {
@@ -3149,7 +3149,7 @@ ul.uk-nav-sub {
         }
 
     .uk-nav-default > li.uk-active > a {
-        /*color: #111; Mapline commented*/
+        /*color: #111; Custom commented*/
         color: #666666;
         background-color: transparent
     }
@@ -3232,13 +3232,13 @@ ul.uk-nav-sub {
 .uk-navbar {
     display: flex;
     position: relative;
-    /* <Mapline code>: will undo selection of text inside button */
+    /* <Custom code>: will undo selection of text inside button */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /* </Mapline code> */
+    /* </Custom code> */
 }
 
 .uk-navbar-container:not(.uk-navbar-transparent) {
@@ -3302,13 +3302,13 @@ ul.uk-nav-sub {
     margin: 0;
     padding: 0;
     list-style: none;
-    /* <Mapline code>: will undo selection of text inside button */
+    /* <Custom code>: will undo selection of text inside button */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /* </Mapline code> */
+    /* </Custom code> */
 }
 
 .uk-navbar-center:only-child, .uk-navbar-left, .uk-navbar-right {
@@ -4050,15 +4050,15 @@ ul.uk-nav-sub {
 
     .uk-accordion-title::before {
         content: "";
-        width: 20px; /*MaplineCode*/
-        height: 20px; /*MaplineCode*/
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M10 7 l-6 6 H16 Z'/%3E%3C/svg%3E%0A"); /*MaplineCode*/
+        width: 20px; /*CustomCode*/
+        height: 20px; /*CustomCode*/
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M10 7 l-6 6 H16 Z'/%3E%3C/svg%3E%0A"); /*CustomCode*/
         /*url("data:image/svg+xml;charset=utf-8,%3csvg%20width%3d%2213%22%20height%3d%2213%22%20viewbox%3d%220%200%2013%2013%22%20xmlns%3d%22http%3a%2f%2fwww.w3.org%2f2000%2fsvg%22%3e%0a%20%20%20%20%3crect%20fill%3d%22%23808080%22%20width%3d%2213%22%20height%3d%221%22%20x%3d%220%22%20y%3d%226%22%20%2f%3e%0a%20%20%20%20%3crect%20fill%3d%22%23808080%22%20width%3d%221%22%20height%3d%2213%22%20x%3d%226%22%20y%3d%220%22%20%2f%3e%0a%3c%2fsvg%3e");*/
         background-repeat: no-repeat;
     }
 
-.uk-open > .uk-accordion-title::before { /*MaplineCode*/
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M10 13l6-6H4z'/%3E%3C/svg%3E%0A"); /*MaplineCode*/
+.uk-open > .uk-accordion-title::before { /*CustomCode*/
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M10 13l6-6H4z'/%3E%3C/svg%3E%0A"); /*CustomCode*/
     /*url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23808080%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%3C%2Fsvg%3E")*/
 }
 
@@ -4263,7 +4263,7 @@ ul.uk-nav-sub {
     width: 1200px
 }
 
-/*<mapline code>*/
+/*<Custom code>*/
 .uk-modal-container-medium .uk-modal-dialog {
     width: 800px;
 }
@@ -4271,7 +4271,7 @@ ul.uk-nav-sub {
 .uk-modal-container-small .uk-modal-dialog {
     width: 440px;
 }
-/*</mapline code>*/
+/*</Custom code>*/
 
 .uk-modal-full {
     padding: 0;
@@ -4298,8 +4298,8 @@ ul.uk-nav-sub {
     font-weight: 800;
     font-size: 20px;
     text-transform: uppercase;
-    color: #fff; /*MaplineCode*/
-    background-image: linear-gradient(to right, #1e93e5 0, #3fc7f5 100%); /*MaplineCode*/
+    color: #fff; /*CustomCode*/
+    background-image: linear-gradient(to right, #1e93e5 0, #3fc7f5 100%); /*CustomCode*/
 }
 
 .uk-modal-footer {
@@ -4328,14 +4328,14 @@ ul.uk-nav-sub {
     font-weight: 500
 }
 
-/*<mapline code>*/
+/*<Custom code>*/
 .uk-modal-description {
     font-size: 12px;
     letter-spacing: 0.5px;
     font-weight: 400;
     color: #999;
 }
-/*</mapline code>*/
+/*</Custom code>*/
 
 [class*=uk-modal-close-] {
     position: absolute;
@@ -4835,17 +4835,17 @@ ul.uk-nav-sub {
 }
 
 .uk-notification-close {
-    display: block; /*mapline code*/
+    display: block; /*Custom code*/
     position: absolute;
     top: 10px;
     right: 10px
 }
-/*mapline code...commented out*/
+/*Custom code...commented out*/
 /*.uk-notification-message:hover .uk-notification-close {
     display: block
 }*/
 
-.uk-notification-message-primary { /*mapline code*/
+.uk-notification-message-primary { /*Custom code*/
     /*color: #fff;
     background-color: #4a83fb*/
     background-color: #1e93e5;
@@ -4865,7 +4865,7 @@ ul.uk-nav-sub {
     background-color: #ffad4f
 }
 
-.uk-notification-message-danger { /*mapline code*/
+.uk-notification-message-danger { /*Custom code*/
     /*color: #fff;
     background-color: #fb3f3f*/
     background-color: #fb3f3f;
@@ -5176,7 +5176,7 @@ ul.uk-nav-sub {
     animation-name: uk-shake
 }
 
-/* Mapline Code: moved to minifyerror.css to support minification
+/* Custom Code: moved to minifyerror.css to support minification
     .uk-animation-stroke {
     animation-name: uk-stroke;
     stroke-dasharray: var(--uk-animation-stroke);
@@ -5624,7 +5624,7 @@ ul.uk-nav-sub {
     max-width: 100%
 }
 
-.plan-width { /*mapline code*/
+.plan-width { /*Custom code*/
     width: 360px;
 }
 
@@ -6122,8 +6122,8 @@ ul.uk-nav-sub {
 .uk-text-large {
     font-size: 24px;
     /*line-height: 1.5;*/
-    font-weight: 800; /*MaplineCode*/
-    letter-spacing: 1.5px; /*MaplineCode*/
+    font-weight: 800; /*CustomCode*/
+    letter-spacing: 1.5px; /*CustomCode*/
 }
 
 .uk-text-light {
@@ -6143,22 +6143,22 @@ ul.uk-nav-sub {
 }
 
 .uk-text-bolder {
-    font-weight: bold; /*MaplineCode*/
-    color: #666666; /*MaplineCode*/
+    font-weight: bold; /*CustomCode*/
+    color: #666666; /*CustomCode*/
 }
 
-/*<mapline code>*/
+/*<Custom code>*/
 .mpl-price {
     font-size: 48px;
 }
-/*</mapline code>*/
+/*</Custom code>*/
 
 .uk-text-italic {
     font-style: italic;
 }
 
 .uk-text-default {
-    font-style: normal !important; /*mapline*/
+    font-style: normal !important; /*Custom*/
 }
 
 .uk-text-capitalize {
@@ -6173,7 +6173,7 @@ ul.uk-nav-sub {
     text-transform: lowercase !important
 }
 
-.uk-text-no-transform { /*mapline*/
+.uk-text-no-transform { /*Custom*/
     text-transform: none !important;
 }
 
@@ -6502,7 +6502,7 @@ iframe.uk-cover {
 }
 
 .uk-background-muted {
-    background-color: #f2f2f2; /*Mapline  UiKit color was: #f8f8f8*/
+    background-color: #f2f2f2; /*Custom  UiKit color was: #f8f8f8*/
 }
 
 .uk-background-primary {
@@ -6510,7 +6510,7 @@ iframe.uk-cover {
 }
 
 .uk-background-secondary {
-    background-color: #1e93e5; /*Mapline  UiKit color was: #111*/
+    background-color: #1e93e5; /*Custom  UiKit color was: #111*/
 }
 
 .uk-background-contain, .uk-background-cover {
@@ -6798,7 +6798,7 @@ svg .uk-text-muted, svg.uk-text-muted {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     /*resize: both*/
-    border-radius: 6px; /*MaplineCode*/
+    border-radius: 6px; /*CustomCode*/
 }
 
 .uk-clearfix::before {
@@ -6901,8 +6901,8 @@ svg .uk-text-muted, svg.uk-text-muted {
 }
 
 .uk-border-rounded {
-    border-radius: 6px; /*MaplineCode-changed from 5px*/
-    border: 1.5px solid #ccc; /*MaplineCode*/
+    border-radius: 6px; /*CustomCode-changed from 5px*/
+    border: 1.5px solid #ccc; /*CustomCode*/
 }
 
 .uk-border-none {
@@ -7265,11 +7265,11 @@ svg .uk-text-muted, svg.uk-text-muted {
     align-items: flex-end
 }
 
-/*<mapline code>*/
+/*<Custom code>*/
 .uk-flex-baseline {
     align-items: baseline
 }
-/*</mapline code>*/
+/*</Custom code>*/
 
 .uk-flex-row {
     flex-direction: row
@@ -7398,13 +7398,13 @@ svg .uk-text-muted, svg.uk-text-muted {
 .uk-margin-bottom {
     margin-bottom: 20px !important
 }
-/*<Mapline Code>*/
+/*<Custom Code>*/
 @media(max-width: 960px) {
     .uk-margin-bottom\@m {
         margin-bottom: 20px !important
     }
 }
-/*</Mapline Code>*/
+/*</Custom Code>*/
 .uk-margin-left {
     margin-left: 20px !important
 }
@@ -7750,19 +7750,19 @@ svg .uk-text-muted, svg.uk-text-muted {
     padding: 10px
 }
 
-.uk-padding-small-left { /*Mapline added*/
+.uk-padding-small-left { /*Custom added*/
     padding-left: 10px !important
 }
 
-.uk-padding-small-right { /*Mapline added*/
+.uk-padding-small-right { /*Custom added*/
     padding-right: 10px !important
 }
 
-.uk-padding-small-top { /*Mapline added*/
+.uk-padding-small-top { /*Custom added*/
     padding-top: 10px !important
 }
 
-.uk-padding-small-bottom { /*Mapline added*/
+.uk-padding-small-bottom { /*Custom added*/
     padding-bottom: 10px !important
 }
 
@@ -9476,7 +9476,7 @@ body {
     background-color: rgba(255,255,255,.1)
 }
 
-/*---------------<Start: Mapline code>---------------------*/
+/*---------------<Start: Custom code>---------------------*/
 .uk-arrow-up::before {
     content: "";
     position: absolute;
@@ -9839,7 +9839,7 @@ body {
     color: #f38c2f !important;
 }
 
-/*<mapline code>*/
+/*<Custom code>*/
 .uk-tab-left > li > a:hover {
     background-color: #ffffff;
 }
@@ -9847,7 +9847,7 @@ body {
 .uk-offcanvas-bar li.uk-active > a .uk-icon {
     color: #f38c2f !important;
 }
-/*</mapline code>*/
+/*</Custom code>*/
 
 .uk-tab-left .uk-icon {
     padding-right: 20px;
@@ -10067,7 +10067,7 @@ body {
     cursor: pointer !important;
 }
 
-/*Mapline class*/
+/*Custom class*/
 .uk-cursor-default {
     cursor: default;
 }
@@ -10089,13 +10089,13 @@ ul > li > .uk-card:hover {
 }
 
 .uk-accordion-position-right::before {
-    position: absolute; /*MaplineCode*/
-    top: 50%; /*MaplineCode*/
-    right: 0px; /*MaplineCode*/
-    transform: translate(-50%,-50%); /*MaplineCode*/
+    position: absolute; /*CustomCode*/
+    top: 50%; /*CustomCode*/
+    right: 0px; /*CustomCode*/
+    transform: translate(-50%,-50%); /*CustomCode*/
 }
 
-[id=planBoxName]::before { /*MaplineCode*/
+[id=planBoxName]::before { /*CustomCode*/
     content: "";
     width: 20px;
     height: 20px;
@@ -10108,7 +10108,7 @@ ul > li > .uk-card:hover {
     left: 100%;
 }
 
-.uk-open [id=planBoxName]::before { /*MaplineCode*/
+.uk-open [id=planBoxName]::before { /*CustomCode*/
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M10 13l6-6H4z'/%3E%3C/svg%3E%0A");
 }
 
@@ -10315,7 +10315,7 @@ ul > li > .uk-card:hover {
     position: relative;
 }
 
-/*---------------</End: Mapline code>---------------------*/
+/*---------------</End: Custom code>---------------------*/
 /*todo: Work on this*/
 .uk-vertical-gradient-button {
     display: inline-block;
@@ -10343,7 +10343,7 @@ ul > li > .uk-card:hover {
 #controlsContainer [uk-icon="datacollect-large"]:hover {
     color: #f38c2f !important;
 }
-/*Mapline Code: Custom code for demo modal, should not be changed*/
+/*Custom Code: Custom code for demo modal, should not be changed*/
 .uk-border-rounded-gray {
     border: 3px solid #cccccc;
     border-radius: 8px;
@@ -10446,7 +10446,7 @@ ul > li > .uk-card:hover {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical
 }
-/*Mapline Code end*/
+/*Custom Code end*/
 .uk-text-ellipsis { /*added to apply text truncate after 3 lines.*/
     overflow: hidden;
     text-overflow: ellipsis;

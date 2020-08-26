@@ -9,9 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Excluding from project since there is no references
 namespace Document.Library.Repo
 {
-    public class AuthRepository
+    public class Zold_AuthRepository
     {
 
         public UserProfile GetUserProfile(string email)

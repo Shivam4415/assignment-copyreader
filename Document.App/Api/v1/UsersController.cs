@@ -1,4 +1,5 @@
-﻿using Document.App.App_Start;
+﻿using Document.App.Api.CustomResponse;
+using Document.App.App_Start;
 using Document.Library.Entity;
 using Document.Library.Entity.Exceptions;
 using Document.Library.Globals.Enum;
@@ -15,19 +16,7 @@ namespace Document.App.Api.v1
     [Route("api/v1/users")]
     public class UsersController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<controller>/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<controller>
         public void Post([FromBody]UserProfile user)
         {
             try
@@ -46,16 +35,6 @@ namespace Document.App.Api.v1
             {
 
             }
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
         }
     }
 }
